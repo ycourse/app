@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :pages
 
   root 'pages#index'
+  get "users/sign_up"
 
   get '/buy/:id', to: 'transactions#new', as: :show_buy 
   post'/buy/:id',to:'transactions#create', as: :buy
