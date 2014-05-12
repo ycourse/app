@@ -6,6 +6,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
+gem 'cancan'
+gem 'rolify'
         
 group :production do
 	gem 'pg'
