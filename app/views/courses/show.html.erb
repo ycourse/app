@@ -1,8 +1,8 @@
 <% for topic in @topics %>
   <strong><%= topic.name %></strong>
   <ul>
-    <% for step in topic.steps%>
-      <li><%= step.name %></li>
+    <% for step in topic.steps %>
+      <li><%= link_to step.name, step %></li>
     <% end %>
   </ul>
 <% end %>
