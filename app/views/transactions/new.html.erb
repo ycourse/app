@@ -4,7 +4,7 @@
 <%= @error %>
 <% end %>
 
-<p>Price: <%= (@course.price) %></p>
+<p>Price: <%= formatted_price(@course.price) %></p>
 <%= form_tag buy_path(id: @course.id) do %>
   <script src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"

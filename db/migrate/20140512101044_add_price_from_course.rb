@@ -1,5 +1,5 @@
 class AddPriceFromCourse < ActiveRecord::Migration
   def change
-    add_column :courses, :price, :decimal
+    add_column :courses, :price, :integer
   end
 end

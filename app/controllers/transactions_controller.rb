@@ -32,7 +32,7 @@ def create
   current_user.save
   
   if @current_user.save
-    redirect_to start_path
+    redirect_to root_path
   else
     render 'new'
   end
