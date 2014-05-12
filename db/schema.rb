@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512101932) do
+ActiveRecord::Schema.define(version: 20140512114313) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -50,6 +50,31 @@ ActiveRecord::Schema.define(version: 20140512101932) do
 
   add_index "sales", ["course_id"], name: "index_sales_on_course_id"
   add_index "sales", ["user_id"], name: "index_sales_on_user_id"
+
+  create_table "steps", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "support"
+    t.string   "video"
+    t.integer  "topic_id"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "steps", ["course_id"], name: "index_steps_on_course_id"
+  add_index "steps", ["topic_id"], name: "index_steps_on_topic_id"
+
+  create_table "topics", force: true do |t|
+    t.string   "name"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "step_id"
+  end
+
+  add_index "topics", ["course_id"], name: "index_topics_on_course_id"
+  add_index "topics", ["step_id"], name: "index_topics_on_step_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

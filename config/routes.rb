@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :steps
+
+  resources :topics
+
   resources :sales
 
   resources :courses

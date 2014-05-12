@@ -1,24 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @course.price %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @course.user %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<% for topic in @topics %>
+  <strong><%= topic.name %></strong>
+  <ul>
+    <% for step in topic.steps%>
+      <li><%= step.name %></li>
+    <% end %>
+  </ul>
+<% end %>
