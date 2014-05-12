@@ -1,6 +1,6 @@
 class StepsController < ApplicationController
   before_action :set_step, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+
 
   # GET /steps
   # GET /steps.json
