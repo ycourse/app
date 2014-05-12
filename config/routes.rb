@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'pages#index'
+
   resources :steps
 
   resources :topics
@@ -7,16 +10,12 @@ Rails.application.routes.draw do
 
   resources :courses
 
-devise_for :users, :path_names => {
-   :sign_in => 'signin',
-   :sign_out => 'signout',
-   :sign_up => 'signup'
-  }
+  devise_for :users
 
 
   resources :pages
 
-  root 'pages#index'
+
 
 
   get '/buy/:id', to: 'transactions#new', as: :show_buy 
