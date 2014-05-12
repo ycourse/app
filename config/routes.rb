@@ -7,11 +7,17 @@ Rails.application.routes.draw do
 
   resources :courses
 
-  devise_for :users
+devise_for :users, :path_names => {
+   :sign_in => 'signin',
+   :sign_out => 'signout',
+   :sign_up => 'signup'
+  }
+
+
   resources :pages
 
   root 'pages#index'
-  get "users/sign_up"
+
 
   get '/buy/:id', to: 'transactions#new', as: :show_buy 
   post'/buy/:id',to:'transactions#create', as: :buy
