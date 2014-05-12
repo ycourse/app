@@ -1,0 +1,16 @@
+<h1><%= @course.name %></h1>
+<%= @course.description.html_safe %>
+<% if @error %>
+<%= @error %>
+<% end %>
+
+<p>Price: <%= (@course.price) %></p>
+<%= form_tag buy_path(id: @course.id) do %>
+  <script src="https://checkout.stripe.com/checkout.js"
+    class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="<%= @course.name %>"
+    data-amount="<%= @course.price %>"></script>
+<% end %>
+
+

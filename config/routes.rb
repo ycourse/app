@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :sales
+
   resources :courses
 
   devise_for :users
   resources :pages
 
   root 'pages#index'
+
+  get '/buy/:id', to: 'transactions#new', as: :show_buy 
+  post'/buy/:id',to:'transactions#create', as: :buy
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

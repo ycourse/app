@@ -8,6 +8,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'httparty'
         
 group :production do
 	gem 'pg'
